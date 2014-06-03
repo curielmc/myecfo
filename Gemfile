@@ -27,8 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Statistic Graphics
-gem 'morrisjs-rails', '~> 0.5.0'
-gem 'raphael-rails', '~> 2.1.2'
+gem "highcharts-rails", "~> 3.0.0"
 # AngularJS
 gem 'angularjs-rails', '~> 1.2.16'
 # Use ActiveModel has_secure_password
