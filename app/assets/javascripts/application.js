@@ -13,10 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require_tree .
-
+// MorrisJS & RaphaelJS
 //= require raphael
 //= require morris
-
+// Angular Libraries
 //= require angular
 //= require angular-resource
+// Config Angular
+//= require main
