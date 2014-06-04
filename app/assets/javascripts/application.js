@@ -20,6 +20,8 @@
 //= require main
 // Charts
 //= require nvd3-rails
+// Bootstrap Twitter Plugins
+//= require bootstrap
 //= require_tree
 
 // Example higchart negative cloumns

@@ -1,23 +1,17 @@
 %h1 Listing allocations
 %hr
-%table.table.table-striped.table-bordered
-  %tr
-    %th Year
-    %th Bills
-    %th Type investments
-    %th{span: 3}
 
-  - @allocations.each do |allocation|
-    %tr
-      %td= allocation.year
-      %td= allocation.bills
-      %td= allocation.type_investments
-      %td{width: 250}
-        .btn-group
-          = link_to 'Show', allocation, class: 'btn btn-default'
-          = link_to 'Edit', edit_allocation_path(allocation), class: 'btn btn-default'
-          = link_to 'Destroy', allocation, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'
-
+%ul.nav.nav-tabs
+  %li.active= link_to "Stocks", "#stocks", data: {toggle: "tab"}
+  %li= link_to "Bonds", "#bonds", data: {toggle: "tab"}
+  %li= link_to "Cash", "#cash", data: {toggle: "tab"}
+.tab-content
+  .tab-pane.active#stocks
+    = render partial: 'list', locals: {allocations: @stocks}
+  .tab-pane#bonds
+    = render partial: 'list', locals: {allocations: @bonds}
+  .tab-pane#cash
+    = render partial: 'list', locals: {allocations: @cash}
 %br
 
 = link_to 'New Allocation', new_allocation_path, class: 'btn btn-lg btn-success'
