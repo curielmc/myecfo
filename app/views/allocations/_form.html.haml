@@ -12,7 +12,7 @@
     = f.text_field :bills, class:'form-control'
   .form-group
     = f.label :type_investments
-    = f.text_field :type_investments, class:'form-control'
+    = f.select :type_investments, Allocation::INVESTMENT, {class:'form-control'}
   .actions
     = f.submit 'Save', class: 'btn btn-lg btn-success'
     = link_to 'Back', allocations_path, class: 'btn btn-lg btn-primary'
