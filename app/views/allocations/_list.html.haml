@@ -2,14 +2,12 @@
   %tr
     %th Year
     %th Bills
-    %th Type investments
     %th{span: 3}
 
   - allocations.each do |allocation|
     %tr
       %td= allocation.year
       %td= allocation.bills
-      %td= allocation.type_investments
       %td{width: 250}
         .btn-group
           = link_to 'Show', allocation, class: 'btn btn-default'
