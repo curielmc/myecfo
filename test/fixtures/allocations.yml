@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  bills: 9.99
+  type_investments: MyString
+
+two:
+  year: 1
+  bills: 9.99
+  type_investments: MyString

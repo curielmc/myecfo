@@ -1,0 +1,23 @@
+%h1 Listing allocations
+%hr
+%table.table.table-striped.table-bordered
+  %tr
+    %th Year
+    %th Bills
+    %th Type investments
+    %th{span: 3}
+
+  - @allocations.each do |allocation|
+    %tr
+      %td= allocation.year
+      %td= allocation.bills
+      %td= allocation.type_investments
+      %td{width: 250}
+        .btn-group
+          = link_to 'Show', allocation, class: 'btn btn-default'
+          = link_to 'Edit', edit_allocation_path(allocation), class: 'btn btn-default'
+          = link_to 'Destroy', allocation, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'
+
+%br
+
+= link_to 'New Allocation', new_allocation_path, class: 'btn btn-lg btn-success'

@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Statistic Graphics
-gem "highcharts-rails", "~> 3.0.0"
+# gem "highcharts-rails", "~> 3.0.0"
 # AngularJS
 gem 'angularjs-rails', '~> 1.2.16'
 # Use ActiveModel has_secure_password
@@ -36,13 +36,14 @@ gem 'bootstrap-sass', '~> 3.1.1.1'
 # Format HAML
 gem 'haml-rails', '~> 0.5.3'
 # gem 'bcrypt', '~> 3.1.7'
-
+gem "nvd3-rails"
 # Use unicorn as the app server
 # gem 'unicorn'
+group :development, :test do
 
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

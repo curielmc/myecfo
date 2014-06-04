@@ -1,0 +1,18 @@
+= form_for @allocation, html: {role: 'form'} do |f|
+  - if @allocation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@allocation.errors.count, "error")} prohibited this allocation from being saved:"
+      - @allocation.errors.full_messages.each do |msg|
+        .alert.alert-danger= msg
+  .form-group
+    = f.label :year
+    = f.number_field :year, class:'form-control'
+  .form-group
+    = f.label :bills
+    = f.text_field :bills, class:'form-control'
+  .form-group
+    = f.label :type_investments
+    = f.text_field :type_investments, class:'form-control'
+  .actions
+    = f.submit 'Save', class: 'btn btn-lg btn-success'
+    = link_to 'Back', allocations_path, class: 'btn btn-lg btn-primary'
