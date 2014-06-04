@@ -20,7 +20,7 @@
 //= require angular-resource
 // Config Angular
 //= require main
-
+//= require_tree
 
 // Example higchart negative cloumns
 $(function () {
