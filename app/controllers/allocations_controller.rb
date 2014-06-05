@@ -4,9 +4,10 @@ class AllocationsController < ApplicationController
   # GET /allocations
   # GET /allocations.json
   def index
+    @allocations = Allocation.all
     @stocks = Allocation.where(type_investments: 'Stocks')
     @bonds = Allocation.where(type_investments: 'Bonds')
-    @cash = Allocation.where(type_investments: 'Cash') 
+    @cash = Allocation.where(type_investments: 'Cash')
   end
 
   # GET /allocations/1

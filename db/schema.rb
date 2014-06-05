@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140604194449) do
 
   create_table "allocations", force: true do |t|
     t.integer  "year"
-    t.decimal  "bills"
+    t.decimal  "bills",            precision: 8, scale: 2
     t.string   "type_investments"
     t.datetime "created_at"
     t.datetime "updated_at"

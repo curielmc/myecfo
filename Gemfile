@@ -39,9 +39,6 @@ gem 'haml-rails', '~> 0.5.3'
 gem "nvd3-rails"
 # Use unicorn as the app server
 # gem 'unicorn'
-group :development, :test do
-
-end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
