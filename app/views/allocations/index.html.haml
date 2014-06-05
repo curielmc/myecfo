@@ -6,6 +6,7 @@
   %li= link_to "Stocks", "#stocks", data: {toggle: "tab"}
   %li= link_to "Bonds", "#bonds", data: {toggle: "tab"}
   %li= link_to "Cash", "#cash", data: {toggle: "tab"}
+  %li= link_to "Combo", "#combo", data: {toggle: "tab"}
 .tab-content
   .tab-pane.active#results
     = render 'home/form_investment'
@@ -17,6 +18,8 @@
     = render partial: 'list', locals: {allocations: @bonds}
   .tab-pane#cash
     = render partial: 'list', locals: {allocations: @cash}
+  .tab-pane#combo
+    = render partial: 'list', locals: {allocations: []}
 -# %br
 -#
 -# = link_to 'New Allocation', new_allocation_path, class: 'btn btn-lg btn-success'
