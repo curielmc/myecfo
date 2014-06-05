@@ -1,13 +1,31 @@
 class AllocationsController < ApplicationController
   before_action :set_allocation, only: [:show, :edit, :update, :destroy]
-
+  respond_to :json, :html
   # GET /allocations
   # GET /allocations.json
   def index
     @allocations = Allocation.all
-    @stocks = Allocation.where(type_investments: 'Stocks')
-    @bonds = Allocation.where(type_investments: 'Bonds')
-    @cash = Allocation.where(type_investments: 'Cash')
+  end
+
+  def stocks
+    @stocks = Allocation.stocks
+    respond_with do |format|
+      format.json {render json: @stocks}
+    end
+  end
+
+  def bonds
+    @bonds = Allocation.bonds
+    respond_with do |format|
+      format.json {render json: @bonds}
+    end
+  end
+
+  def cash
+    @cash = Allocation.cash
+    respond_with do |format|
+      format.json {render json: @cash}
+    end
   end
 
   # GET /allocations/1

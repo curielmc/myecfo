@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :allocations
+  resources :allocations do
+    collection do
+      get 'stocks'
+      get 'bonds'
+      get 'cash'
+    end
+  end
 
   get 'home/index'
 

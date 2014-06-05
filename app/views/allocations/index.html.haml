@@ -3,26 +3,15 @@
 
 %ul.nav.nav-tabs#myTab
   %li.active= link_to "Prediction", "#results", data: {toggle: "tab"}
-  %li= link_to "Stocks", "#stocks", data: {toggle: "tab"}
-  %li= link_to "Bonds", "#bonds", data: {toggle: "tab"}
-  %li= link_to "Cash", "#cash", data: {toggle: "tab"}
   %li= link_to "Combo", "#combo", data: {toggle: "tab"}
 .tab-content
   .tab-pane.active#results
     = render 'home/form_investment'
     %hr
     = render 'home/body'
-  .tab-pane#stocks
-    = render partial: 'list', locals: {allocations: @stocks}
-  .tab-pane#bonds
-    = render partial: 'list', locals: {allocations: @bonds}
-  .tab-pane#cash
-    = render partial: 'list', locals: {allocations: @cash}
   .tab-pane#combo
     = render partial: 'list', locals: {allocations: []}
--# %br
--#
--# = link_to 'New Allocation', new_allocation_path, class: 'btn btn-lg btn-success'
+
 / Modal
 #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog.modal-lg
@@ -32,11 +21,30 @@
         %h4#myModalLabel.modal-title.text-center Disclosure & Methodology
       .modal-body
         %p
-          Table was built using historical U.S. Stock market data located here: http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html. Note that this analysis only takes into account U.S. markets; international markets, such as emerging markets, could be much more volatile, and so the performance values could conceivably be lower. This analysis assumes a diversified stock portfolio. Also, the return stream does not take into account product, advisor or other expenses that an investor might incur. It also does not consider the effect of taxes.  Finally, it’s important to note that past performance is not indicative of future returns.
+          Table was built using historical U.S. Stock market data located here:
+          %a{ href: "http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html."} http://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html.
+          %br
+          Note that this analysis only takes into account U.S. markets; international markets, such as emerging markets, could be much more volatile, and so the performance values could conceivably be lower.
+          %br
+          This analysis assumes a diversified stock portfolio. Also, the return stream does not take into account product, advisor or other expenses that an investor might incur. It also does not consider the effect of taxes.
+          %br
+          Finally, it’s important to note that past performance is not indicative of future returns.
         %p
-          Non-deposit investment products are not FDIC insured, are not deposits or other obligations of MYeCFO, are not guaranteed by MYeCFO, and involve investment risks, including possible loss of principal. The information contained in this article is for informational purposes only and contains confidential and proprietary information that is subject to change without notice. Any opinions expressed are current only as of the time made and are subject to change without notice. This article may include estimates, projections, and other forward-looking statements; however, due to numerous factors, actual events may differ substantially from those presented. Any graphs and tables that make up this article have been based on unaudited, third party data and performance information provided to us by one or more commercial databases or publicly available websites and reports. While we believe this information to be reliable, MYeCFO bears no responsibility whatsoever for any errors or omissions. Additionally, please be aware that past performance is no guide to the future performance of any manager or strategy, and that the performance results displayed herein may have been adversely or favorably impacted by events and economic conditions that will not prevail in the future. Therefore, caution must be used inferring that these results are indicative of the future performance of any strategy. Index results assume re-investment of all dividends and interest. Moreover, the information provided is not intended to be, and should not be construed as, investment, legal, or tax advice. Nothing contained herein should be construed as a recommendation or advice to purchase or sell any security, investment, or portfolio allocation. Any investment advice provided by MYeCFO is client-specific based on each client’s risk tolerance and investment objectives. Please consult your MYeCFO Advisor directly for investment advice related to your specific investment portfolio.
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+          Non-deposit investment products are not FDIC insured, are not deposits or other obligations of MYeCFO, are not guaranteed by MYeCFO, and involve investment risks, including possible loss of principal.
+          %br
+          The information contained in this article is for informational purposes only and contains confidential and proprietary information that is subject to change without notice. Any opinions expressed are current only as of the time made and are subject to change without notice. This article may include estimates, projections, and other forward-looking statements; however, due to numerous factors, actual events may differ substantially from those presented.
+          %br
+          Any graphs and tables that make up this article have been based on unaudited, third party data and performance information provided to us by one or more commercial databases or publicly available websites and reports.
+          %br
+          While we believe this information to be reliable, MYeCFO bears no responsibility whatsoever for any errors or omissions. Additionally, please be aware that past performance is no guide to the future performance of any manager or strategy, and that the performance results displayed herein may have been adversely or favorably impacted by events and economic conditions that will not prevail in the future.
+          %br
+          Therefore, caution must be used inferring that these results are indicative of the future performance of any strategy. Index results assume re-investment of all dividends and interest. Moreover, the information provided is not intended to be, and should not be construed as, investment, legal, or tax advice.
+          %br
+          Nothing contained herein should be construed as a recommendation or advice to purchase or sell any security, investment, or portfolio allocation. Any investment advice provided by MYeCFO is client-specific based on each client’s risk tolerance and investment objectives.
+          %br
+          Please consult your MYeCFO Advisor directly for investment advice related to your specific investment portfolio.
+      -#.modal-footer
+      -#  %button.btn.btn-danger{"data-dismiss" => "modal", type: "button"} Close
 .text-center
   %a{"data-target" => "#myModal", "data-toggle" => "modal"}
     %b Disclosure & Methodology
