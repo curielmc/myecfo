@@ -33,7 +33,7 @@ gem 'bootstrap-sass', '~> 3.1.1.1'
 # Format HAML
 gem 'haml-rails', '~> 0.5.3'
 # gem 'bcrypt', '~> 3.1.7'
-gem "nvd3-rails"
+gem 'chart-js-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 # Use Capistrano for deployment
