@@ -19,7 +19,7 @@
 // Config Angular
 //= require main
 // Charts
-//= require nvd3-rails
+//= require Chart
 // Bootstrap Twitter Plugins
 //= require bootstrap
 //= require_tree .

@@ -1,48 +1,86 @@
-historicalBarChart = [
-  key: "Cumulative Return"
-  values: [
-    {
-      label: "A"
-      value: 29.765957771107
-    }
-    {
-      label: "B"
-      value: 0
-    }
-    {
-      label: "C"
-      value: 32.807804682612
-    }
-    {
-      label: "D"
-      value: 196.45946739256
-    }
-    {
-      label: "E"
-      value: 0.19434030906893
-    }
-    {
-      label: "F"
-      value: 98.079782601442
-    }
-    {
-      label: "G"
-      value: 13.925743130903
-    }
-    {
-      label: "H"
-      value: 5.1387322875705
-    }
-  ]
-]
-nv.addGraph ->
+jQuery ->
+  data = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+      {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,1)",
+        pointColor : "rgba(220,220,220,1)",
+        pointStrokeColor : "#fff",
+        data : [65,59,90,81,56,55,40]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,1)",
+        pointColor : "rgba(151,187,205,1)",
+        pointStrokeColor : "#fff",
+        data : [28,48,40,19,96,27,100]
+      }
+    ]
+  }
 
-  #.staggerLabels(historicalBarChart[0].values.length > 8)
-  chart = nv.models.discreteBarChart().x((d) ->
-    d.label
-  ).y((d) ->
-    d.value
-  ).staggerLabels(true).tooltips(false).showValues(true)
-  d3.select("#worst svg").datum(historicalBarChart).call chart
-  nv.utils.windowResize chart.update
-  chart
+  myNewChart = new Chart($("#canvas").get(0).getContext("2d")).Bar(data)
+
+  jQuery ->
+  data = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+      {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,1)",
+        pointColor : "rgba(220,220,220,1)",
+        pointStrokeColor : "#fff",
+        data : [65,59,90,81,56,55,40]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,1)",
+        pointColor : "rgba(151,187,205,1)",
+        pointStrokeColor : "#fff",
+        data : [28,48,40,19,96,27,100]
+      }
+    ]
+  }
+
+  myNewChart2 = new Chart($("#canvas2").get(0).getContext("2d")).Bar(data)
+
+  jQuery ->
+  data = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+      {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,1)",
+        pointColor : "rgba(220,220,220,1)",
+        pointStrokeColor : "#fff",
+        data : [65,59,90,81,56,55,40]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,1)",
+        pointColor : "rgba(151,187,205,1)",
+        pointStrokeColor : "#fff",
+        data : [28,48,40,19,96,27,100]
+      }
+    ]
+  }
+
+  myNewChart3 = new Chart($("#canvas3").get(0).getContext("2d")).Bar(data)
+
+  jQuery ->
+  data = [
+    {
+      value: 30
+      color: "#F38630"
+    }
+    {
+      value: 50
+      color: "#E0E4CC"
+    }
+    {
+      value: 100
+      color: "#69D2E7"
+    }
+]
+
+  myNewChart4 = new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
