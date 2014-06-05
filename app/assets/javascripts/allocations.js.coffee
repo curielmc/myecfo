@@ -1,4 +1,3 @@
-
 testdata = [
   {
     key: "One"
@@ -34,3 +33,4 @@ nv.addGraph ->
   ).width(width).height(height)
   d3.select("#allocation").datum([testdata]).transition().duration(1200).attr("width", width).attr("height", height).call chart
   chart
+

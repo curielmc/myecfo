@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
@@ -26,8 +25,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Statistic Graphics
-# gem "highcharts-rails", "~> 3.0.0"
 # AngularJS
 gem 'angularjs-rails', '~> 1.2.16'
 # Use ActiveModel has_secure_password
