@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :allocations do
+  resources :allocations, only:[:index] do
     collection do
       get 'stocks'
       get 'bonds'
