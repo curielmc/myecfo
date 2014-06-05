@@ -42,3 +42,10 @@ gem 'chart-js-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "rails_12factor"
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'jasmine-rails'
+  gem 'guard-rspec', require: false
+end

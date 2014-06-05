@@ -1,22 +1,22 @@
 .row
   .col-lg-4
-    %h1.lead.text-center Allocation
+    %h2.lead.text-center Allocation
     %canvas#canvas4{:height => "250", :width => "400"}
   .col-lg-4
-    %h1.lead.text-center Historical Worst Anual Returns
+    %h2.lead.text-center Historical Worst Anual Returns
     = render 'home/historical_worst_anual_returns'
   .col-lg-4
-    %h1.lead.text-center Historical Worst Annual Ending Values
+    %h2.lead.text-center Historical Worst Annual Ending Values
     %canvas#canvas{:height => "250", :width => "400"}
 %hr
 .row
   .col-lg-4
-    %h1.lead.text-center Historical Average Best & Average Annual Returns
+    %h2.lead.text-center Historical Average Best & Average Annual Returns
     = render "home/historical_average"
   .col-lg-4
-    %h1.lead.text-center Historical Average Ending Values
+    %h2.lead.text-center Historical Average Ending Values
     %canvas#canvas2{:height => "250", :width => "400"}
   .col-lg-4
-    %h1.lead.text-center Historical Best Ending Values
+    %h2.lead.text-center Historical Best Ending Values
     %canvas#canvas3{:height => "250", :width => "400"}
 
