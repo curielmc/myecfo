@@ -2,14 +2,14 @@
   %tr
     %th Year
     %th Bills
-    %th{span: 3}
+    -# %th{span: 3}
 
   - allocations.each do |allocation|
     %tr
       %td= allocation.year
       %td= allocation.bills
-      %td{width: 250}
-        .btn-group
-          = link_to 'Show', allocation, class: 'btn btn-default'
-          = link_to 'Edit', edit_allocation_path(allocation), class: 'btn btn-default'
-          = link_to 'Destroy', allocation, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'
+      -# %td{width: 250}
+      -#   .btn-group
+      -#     = link_to 'Show', allocation, class: 'btn btn-default'
+      -#     = link_to 'Edit', edit_allocation_path(allocation), class: 'btn btn-default'
+      -#     = link_to 'Destroy', allocation, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-default'
