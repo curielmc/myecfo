@@ -25,3 +25,7 @@
 // Config Angular
 //= require main
 //= require allocations
+// Jquery Mask Money
+//= require jquery.maskMoney.min
+
+$("#amount").maskMoney();

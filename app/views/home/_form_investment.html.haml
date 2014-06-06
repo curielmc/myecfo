@@ -4,19 +4,28 @@
   .col-lg-4
     .form-group
       %label Initial Investment
-      %input{type: 'number', class: 'form-control', id: "amount"}
+      .input-group
+        %input{type: 'text', class: 'form-control', id: "amount"}
+        %span.input-group-addon $
   .col-lg-4
     %span
 .row.text-center
   .col-lg-4
     .form-group
       %label Stocks
-      %input{type: 'number', class: 'form-control', id: "stocks"}
+      .input-group
+        %input{type: 'number', class: 'form-control', id: "stocks"}
+        %span.input-group-addon %
   .col-lg-4
     .form-group
       %label Bonds
-      %input{type: 'number', class: 'form-control', id: "bounds"}
+      .input-group
+        %input{type: 'number', class: 'form-control', id: "bounds"}
+        %span.input-group-addon %
   .col-lg-4
     .form-group
       %label Cash
-      %input{type: 'number', class: 'form-control', id: "cash"}
+      .input-group
+        %input{type: 'number', class: 'form-control', id: "cash"}
+        %span.input-group-addon %
+
