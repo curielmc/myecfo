@@ -16,10 +16,12 @@
 // Angular Libraries
 //= require angular
 //= require angular-resource
-// Config Angular
-//= require main
+
 // Charts
 //= require Chart
 // Bootstrap Twitter Plugins
 //= require bootstrap
-//= require_tree .
+
+// Config Angular
+//= require main
+//= require allocations
