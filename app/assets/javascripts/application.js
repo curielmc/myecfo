@@ -31,4 +31,4 @@
 // Jquery Mask Money
 //= require jquery.maskMoney.min
 
-$("#amount").maskMoney();
+//$("#amount").maskMoney();

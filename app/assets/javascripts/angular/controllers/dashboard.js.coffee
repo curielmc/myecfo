@@ -1,2 +1,6 @@
 @DashboardCtrl = ($scope) ->
-  $scope.title = "Allocation"
+  $scope.investment = ""
+  $scope.stock = ""
+  $scope.bonds = ""
+  $scope.cash = ""
+

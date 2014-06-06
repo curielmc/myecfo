@@ -1,4 +1,4 @@
-%form{name:'formInvestment'}
+%form{name:'formInvestment', class: 'css-form', novalidate: ''}
   .row.text-center
     .col-lg-4
       %span
@@ -6,7 +6,7 @@
       .form-group
         %label Initial Investment
         .input-group
-          %input.input-text-align-right{type: 'text', class: 'form-control', id: "amount", validate:''}
+          %input.input-text-align-right{type: 'text', class: 'form-control',name: 'investment', id: "amount", ng:{model: 'investment'}, required:''}
           %span.input-group-addon $
     .col-lg-4
       %span
@@ -15,18 +15,26 @@
       .form-group
         %label Stocks
         .input-group
-          %input.input-text-align-right{type: 'number', class: 'form-control', id: "stocks", validate:''}
+          %input.input-text-align-right.my-input{type: 'number', name: 'stocks', class: 'form-control', id: "stocks", ng:{model: 'stock'}, required:''}
           %span.input-group-addon %
     .col-lg-4
       .form-group
         %label Bonds
         .input-group
-          %input.input-text-align-right{type: 'number', class: 'form-control', id: "bounds", validate:''}
+          %input.input-text-align-right{type: 'number', name: 'bonds',class: 'form-control', id: "bounds",ng:{model: 'bonds'} , required:''}
           %span.input-group-addon %
     .col-lg-4
       .form-group
         %label Cash
         .input-group
-          %input.input-text-align-right{type: 'number', class: 'form-control', id: "cash", validate:''}
+          %input.input-text-align-right{type: 'number', name: 'cash', class: 'form-control', id: "cash", ng:{model: 'cash'}, required:''}
           %span.input-group-addon %
 
+:css
+  .css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+  }
+
+  .css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+  }
