@@ -1,5 +1,5 @@
 'use strict'
-myApp = angular.module("myApp", [
+myApp = angular.module("Hreturns", [
   'ngResource'
 ])
 

@@ -17,13 +17,16 @@
 //= require angular
 //= require angular-resource
 
-// Charts
+// Charts library
 //= require Chart
 // Bootstrap Twitter Plugins
 //= require bootstrap
 
 // Config Angular
 //= require main
+// Angular MVC
+//= require ./angular/controllers/dashboard
+// Charts
 //= require allocations
 // Jquery Mask Money
 //= require jquery.maskMoney.min
