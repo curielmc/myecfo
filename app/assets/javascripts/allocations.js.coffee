@@ -84,3 +84,6 @@ jQuery ->
 ]
 
   myNewChart4 = new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
+
+
+

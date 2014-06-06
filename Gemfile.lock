@@ -32,6 +32,9 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
+    byebug (3.1.2)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     chart-js-rails (0.0.6)
@@ -44,6 +47,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    columnize (0.8.9)
+    debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.1.0)
@@ -192,6 +197,7 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails (~> 1.2.16)
   bootstrap-sass (~> 3.1.1.1)
+  byebug
   chart-js-rails
   coffee-rails (~> 4.0.0)
   factory_girl_rails
