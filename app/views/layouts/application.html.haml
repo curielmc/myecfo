@@ -4,7 +4,7 @@
     %title Hreturns
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
-  %body{:'ng-app' => "myApp"}
+  %body{ng:{app: 'Hreturns'}}
     .container-fluid
       = yield
   = javascript_include_tag 'application'
