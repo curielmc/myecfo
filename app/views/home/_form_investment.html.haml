@@ -15,21 +15,21 @@
       .form-group
         %label Stocks
         .input-group
-          %input.input-text-align-right.my-input{type: 'number', name: 'stocks', class: 'form-control', id: "stocks", ng:{model: 'formInvestment.stock'}, :'ng-blur'=> 'pieChart(formInvestment)', required:''}
+          %input.input-text-align-right.my-input{type: 'number', name: 'stocks', class: 'form-control', id: "stocks", ng:{model: 'formInvestment.stock'}, :'ng-change'=> 'pieChart(formInvestment)', required:''}
           %span.input-group-addon %
       %h4{ng:{bind:'showMoney(formInvestment.investment,formInvestment.stock)'}}
     .col-lg-4
       .form-group
         %label Bonds
         .input-group
-          %input.input-text-align-right{type: 'number', name: 'bonds',class: 'form-control', id: "bounds",ng:{model: 'formInvestment.bonds'}, :'ng-blur'=> 'pieChart(formInvestment)' , required:''}
+          %input.input-text-align-right{type: 'number', name: 'bonds',class: 'form-control', id: "bounds",ng:{model: 'formInvestment.bonds'}, :'ng-change'=> 'pieChart(formInvestment)' , required:''}
           %span.input-group-addon %
       %h4{ng:{bind:'showMoney(formInvestment.investment,formInvestment.bonds)'}}
     .col-lg-4
       .form-group
         %label Cash
         .input-group
-          %input.input-text-align-right{type: 'number', name: 'cash', class: 'form-control', id: "cash", ng:{model: 'formInvestment.cash'}, :'ng-blur'=> 'pieChart(formInvestment)', required:''}
+          %input.input-text-align-right{type: 'number', name: 'cash', class: 'form-control', id: "cash", ng:{model: 'formInvestment.cash'}, :'ng-change'=> 'pieChart(formInvestment)', required:''}
           %span.input-group-addon %
       %h4{ng:{bind:'showMoney(formInvestment.investment,formInvestment.cash)'}}
 
