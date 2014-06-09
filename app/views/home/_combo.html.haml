@@ -3,18 +3,23 @@
 .row
   .col-lg-4
     %ul.list-group
-      %li.list-group-item
+      %li.list-group-item.list-group-item-success
         %span.badge
           {{formInvestment.stock}} %
         Stocks:
-      %li.list-group-item
+      %li.list-group-item.list-group-item-success
         %span.badge
           {{formInvestment.bonds}} %
         Bonds:
-      %li.list-group-item
+      %li.list-group-item.list-group-item-success
         %span.badge
           {{formInvestment.cash}} %
         Cash:
+      %li.list-group-item.list-group-item-info
+        %span.badge
+          $ {{initial_value_combo}}
+        Investment:
+%h1.lead.text-center Annualized
 %table.table.table-bordered.table-striped
   %thead
     %th
