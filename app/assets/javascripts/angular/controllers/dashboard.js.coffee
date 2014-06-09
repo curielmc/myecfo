@@ -6,6 +6,7 @@
   $scope.cash = cash
   $scope.aux1 = []
   $scope.aux_by_year = []
+  $scope.second = []
   $scope.pieChart = (formInvestment) ->
 
     data = [
@@ -44,4 +45,7 @@
       ammount_aux = $scope.aux1[value.year]
       cont++
     $scope.aux1
+#    console.log $scope.aux1
+
     $scope.aux_by_year
+#    console.log $scope.aux_by_year

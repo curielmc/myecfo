@@ -31,16 +31,6 @@
       %td 10-Year
       %td 20-Year
   %tbody
-    %tr
+    %tr{ng:{repeat: 'item in calculate_by_year(3,100,formInvestment.stock,formInvestment.bonds,formInvestment.cash) track by $index'}}
       %td
-      %td
-      %td
-      %td
-      %td
-      %td
-      %td
-      %td
-
--#-#%h1{ng:{bind:'calculate_by_year(3, 100, 30,30,40)'}}
--#{{calculate_by_year(3, 100, 30,30,40)}}
-
+        {{item}}
