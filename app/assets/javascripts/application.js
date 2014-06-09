@@ -32,3 +32,25 @@
 //= require jquery.maskMoney.min
 
 //$("#amount").maskMoney();
+
+
+
+calculate_by_year = function(year, ammount, ps, pb, pc) {
+  var ammount_aux, aux1, aux_by_year, cont;
+  cont = 1;
+  aux1 = [];
+  aux_by_year = [];
+  ammount_aux = ammount;
+  aux1[1927] = ammount;
+  angular.forEach(stocks, function(value, key) {
+    aux1[value.year] = ammount_aux * (1 + (value.percentage) / 100);
+    if (cont >= year) {
+      aux_by_year[value.year] = Math.pow(aux1[value.year] / aux1[value.year - year], 1 / year) - 1;
+    }
+    ammount_aux = aux1[value.year];
+    return cont++;
+  });
+  console.log(aux1);
+  console.log(aux_by_year);
+  return aux_by_year;
+};

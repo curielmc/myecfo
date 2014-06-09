@@ -4,11 +4,11 @@
     %title Hreturns
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
-  %body{ng:{app: 'Hreturns'}}
-    .container-fluid
-      = yield
   :javascript
     stocks = #{Allocation.serialize_allocation(:stocks)}
     bonds = #{Allocation.serialize_allocation(:bonds)}
     cash = #{Allocation.serialize_allocation(:cash)}
   = javascript_include_tag 'application'
+  %body{ng:{app: 'Hreturns'}}
+    .container-fluid
+      = yield

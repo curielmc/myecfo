@@ -7,6 +7,6 @@ class Allocation < ActiveRecord::Base
 
 
   def self.serialize_allocation(type_investment)
-    self.send(type_investment).collect { |x| {x.year => x.bills}}.to_json
+    self.send(type_investment).collect { |x| {year: x.year, percentage: x.bills}}.to_json
   end
 end
