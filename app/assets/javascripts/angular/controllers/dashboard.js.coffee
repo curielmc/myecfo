@@ -24,13 +24,13 @@
       }
     ]
     pieChart = new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
-    1_year = calculate_by_year(1, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    3_years = calculate_by_year(3, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    5_years = calculate_by_year(5, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    10_years = calculate_by_year(10, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    20_years = calculate_by_year(20, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    30_years = calculate_by_year(30, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    
+    year_1 = calculate_by_year(1, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_3 = calculate_by_year(3, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_5 = calculate_by_year(5, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_10 = calculate_by_year(10, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_20 = calculate_by_year(20, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_30 = calculate_by_year(30, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+
     return pieChart
 
   $scope.showMoney = (value1, value2) ->
