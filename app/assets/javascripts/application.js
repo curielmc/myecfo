@@ -41,11 +41,11 @@ calculate_by_year = function(year, ammount, ps, pb, pc) {
   aux1 = [];
   aux_by_year = [];
   ammount_aux = ammount;
-  aux1[1927] = ammount;
+//  aux1[1927] = ammount;
   angular.forEach(stocks, function(value, key) {
     aux1[value.year] = ammount_aux * (1 + (calculate_percetage(stocks[key].percentage, ps) + calculate_percetage(bonds[key].percentage, pb) + calculate_percetage(cash[key].percentage, pc)) / 100);
     if (cont >= year) {
-      aux_by_year[value.year] = (Math.pow(aux1[value.year] / aux1[value.year - year], 1 / year) - 1) * 100;
+      aux_by_year[value.year] = Math.round((Math.pow(aux1[value.year] / aux1[value.year - year], 1 / year) - 1) * 100)/100;
     }
     ammount_aux = aux1[value.year];
     return cont++;

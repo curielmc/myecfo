@@ -26,5 +26,3 @@
     show_money = (value1/100) * value2
     return show_money
 
-  $scope.calculate_by_year = (year) ->
-    
