@@ -24,6 +24,13 @@
       }
     ]
     pieChart = new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
+    1_year = calculate_by_year(1, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    3_years = calculate_by_year(3, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    5_years = calculate_by_year(5, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    10_years = calculate_by_year(10, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    20_years = calculate_by_year(20, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    30_years = calculate_by_year(30, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    
     return pieChart
 
   $scope.showMoney = (value1, value2) ->
@@ -36,16 +43,4 @@
     parseFloat(value) * parseFloat(percentage) / 100
 
 
-  $scope.calculate_by_year = (year, ammount, ps, pb, pc) ->
-    cont = 1
-    ammount_aux = ammount
-    angular.forEach stocks, (value, key) ->
-      $scope.aux1[value.year] = ammount_aux * (1 + ($scope.calculate_percetage($scope.stocks[key].percentage, ps) + $scope.calculate_percetage($scope.bonds[key].percentage, pb) + $scope.calculate_percetage($scope.cash[key].percentage, pc)) / 100)
-      $scope.aux_by_year[value.year] = Math.round((Math.pow($scope.aux1[value.year] / $scope.aux1[value.year - year], 1 / year) - 1) * 100) / 100  if cont >= year
-      ammount_aux = $scope.aux1[value.year]
-      cont++
-    $scope.aux1
-#    console.log $scope.aux1
 
-    $scope.aux_by_year
-#    console.log $scope.aux_by_year
