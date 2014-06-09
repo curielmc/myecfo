@@ -1,0 +1,37 @@
+%h1.lead.text-center Annual Returns on Investments in Compounded Value of $ {{initial_value_combo}}
+%th
+.row
+  .col-lg-4
+    %ul.list-group
+      %li.list-group-item
+        %span.badge
+          {{formInvestment.stock}} %
+        Stocks:
+      %li.list-group-item
+        %span.badge
+          {{formInvestment.bonds}} %
+        Bonds:
+      %li.list-group-item
+        %span.badge
+          {{formInvestment.cash}} %
+        Cash:
+%table.table.table-bordered.table-striped
+  %thead
+    %th
+      %td Year
+      %td 1 Year
+      %td Combo Growth: Stocks & Bonds
+      %td 3-Year
+      %td 5-Year
+      %td 10-Year
+      %td 20-Year
+  %tbody
+    %tr
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td
+      %td

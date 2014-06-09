@@ -1,17 +1,16 @@
 %div{ng: {controller: 'DashboardCtrl'}}
   %h1.lead.text-center Portfolio Risk Assessment Tool
   %hr
-
+  = render 'home/form_investment'
+  %hr
   %ul.nav.nav-tabs#myTab
     %li.active= link_to "Prediction", "#results", data: {toggle: "tab"}
     %li= link_to "Combo", "#combo", data: {toggle: "tab"}
   .tab-content
     .tab-pane.active#results
-      = render 'home/form_investment'
-      %hr
       = render 'home/body'
     .tab-pane#combo
-      = render partial: 'list', locals: {allocations: []}
+      = render 'home/combo'
 
   = render 'allocations/modal'
   .text-center

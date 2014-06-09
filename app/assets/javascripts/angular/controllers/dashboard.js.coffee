@@ -1,5 +1,6 @@
 @DashboardCtrl = ($scope) ->
   $scope.formInvestment = {}
+  $scope.initial_value_combo = 100
   $scope.pieChart = (formInvestment) ->
 
     data = [
@@ -20,7 +21,7 @@
     return pieChart
 
   $scope.showMoney = (value1, value2) ->
-    if !value2
+    if !value1 || !value2
       return ""
     show_money = (value1/100) * value2
     return show_money
