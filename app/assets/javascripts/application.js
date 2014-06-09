@@ -50,8 +50,7 @@ calculate_by_year = function(year, ammount, ps, pb, pc) {
     ammount_aux = aux1[value.year];
     return cont++;
   });
-  console.log(aux1);
-  console.log(aux_by_year);
+  return aux1;
   return aux_by_year;
 };
 

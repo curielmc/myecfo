@@ -42,5 +42,15 @@
   $scope.calculate_percetage = (value, percentage) ->
     parseFloat(value) * parseFloat(percentage) / 100
 
+  $scope.validationSumTotal = (formInvestment) ->
+#    console.log(formInvestment.stock );
+    sumTotal = formInvestment.stock + formInvestment.bonds + formInvestment.cash
+#    console.log sumTotal
+    if sumTotal == 100
+      $(".form-group").removeClass("has-error has-feedback")
+      $(".form-group").addClass("has-success has-feedback")
+    else
+      $(".form-group").removeClass("has-success has-feedback")
+      $(".form-group").addClass("has-error has-feedback")
 
-
+    return sumTotal
