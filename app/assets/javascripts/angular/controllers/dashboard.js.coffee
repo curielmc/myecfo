@@ -17,7 +17,7 @@
         color: "#69D2E7"
       }
     ]
-    new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
+    new Chart($("#canvas4").get(0).getContext("2d")).Pie(data, { animation : false})
     year_1 = calculate_by_year(1, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
     years_3 = calculate_by_year(3, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
     years_5 = calculate_by_year(5, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)

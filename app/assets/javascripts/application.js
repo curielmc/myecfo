@@ -98,8 +98,8 @@ function draw_bar(datas, selector) {
     //String - Colour of the scale line
     scaleLineColor : "rgba(0,0,0,.3)",
     //String - Colour of the grid lines
-    scaleGridLineColor : "rgba(0,0,5,.05)"
-
+    scaleGridLineColor : "rgba(0,0,5,.05)",
+    animation : false
   }
   new Chart($(selector).get(0).getContext("2d")).Bar(data, options);
 }
