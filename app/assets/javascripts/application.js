@@ -76,28 +76,32 @@ function draw_bar(datas, selector) {
     labels: ["1 year", "3 years", "5 years", "10 years", "20 years", "30 years"],
     datasets: [
       {
-        fillColor: "rgba(220,220,220,0.5)",
+        fillColor: "rgba(220,220,220,0.8)",
         strokeColor: "rgba(220,220,220,1)",
         pointColor: "rgba(220,220,220,1)",
         pointStrokeColor: "#fff",
         data: datas
       }
-    ],
+    ]
+  };
+
+  options = {
     scaleOverride : true,
-    //** Required if scaleOverride is true **
-    //Number - The number of steps in a hard coded scale
-    scaleSteps : 10,
+      //** Required if scaleOverride is true **
+      //Number - The number of steps in a hard coded scale
+      scaleSteps : 10,
     //Number - The value jump in the hard coded scale
-    scaleStepWidth : null,
+    scaleStepWidth : 5,
     //Number - The scale starting value
     scaleStartValue : -20,
 
     //String - Colour of the scale line
     scaleLineColor : "rgba(0,0,0,.3)",
     //String - Colour of the grid lines
-    scaleGridLineColor : "rgba(0,0,5,.5)"
-  };
-  new Chart($(selector).get(0).getContext("2d")).Bar(data);
+    scaleGridLineColor : "rgba(0,0,5,.05)"
+
+  }
+  new Chart($(selector).get(0).getContext("2d")).Bar(data, options);
 }
 
 

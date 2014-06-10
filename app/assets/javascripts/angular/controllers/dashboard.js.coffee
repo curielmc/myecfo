@@ -60,9 +60,8 @@
     $(".best table tr td.year30").html(matrix_30[0])
 
     draw_bar([matrix_1[0], matrix_3[0], matrix_5[0], matrix_10[0], matrix_20[0], matrix_30[0]], "#canvas3")
-    draw_bar([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], "#canvas2")
-    draw_bar([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], "#canvas")
-
+    draw_bar([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], "#canvas")
+    draw_bar([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], "#canvas2")
 
     return pieChart;
 
