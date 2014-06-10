@@ -1,12 +1,6 @@
 @DashboardCtrl = ($scope) ->
   $scope.formInvestment = {}
   $scope.initial_value_combo = 100
-  $scope.stocks = stocks
-  $scope.bonds = bonds
-  $scope.cash = cash
-  $scope.aux1 = []
-  $scope.aux_by_year = []
-  $scope.second = []
   $scope.pieChart = (formInvestment) ->
 
     data = [
@@ -23,7 +17,7 @@
         color: "#69D2E7"
       }
     ]
-    pieChart = new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
+    new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
     year_1 = calculate_by_year(1, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
     years_3 = calculate_by_year(3, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
     years_5 = calculate_by_year(5, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
@@ -62,8 +56,7 @@
     draw_bar([matrix_1[0], matrix_3[0], matrix_5[0], matrix_10[0], matrix_20[0], matrix_30[0]], "#canvas3")
     draw_bar([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], "#canvas")
     draw_bar([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], "#canvas2")
-
-    return pieChart;
+    return true
 
   $scope.showMoney = (value1, value2) ->
     if !value1 || !value2
@@ -82,4 +75,4 @@
     else
       $(".form-group:not(.none_change)").removeClass("has-success has-feedback")
       $(".form-group:not(.none_change)").addClass("has-error has-feedback")
-    return sumTotal
+    return true
