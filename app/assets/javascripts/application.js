@@ -47,43 +47,57 @@ function calculate_percetage(value, percentage){
   return (parseFloat(value) * parseFloat(percentage) / 100)
 }
 
-function calculate_best_values(hvalues){
+function calculate_best_values(hvalues) {
   var max_values = [];
   var cont = 0;
   max_values[2] = 0;
-  angular.forEach(hvalues, function(value, key){
+  angular.forEach(hvalues, function (value, key) {
     // 0 for best
-    if(typeof(max_values[0]) === "undefined" || value > max_values[0]){
+    if (typeof(max_values[0]) === "undefined" || value > max_values[0]) {
       max_values[0] = value;
     }
     // 1 for worst
-      if(typeof(max_values[1]) === "undefined" || value < max_values[1]){
-          max_values[1] = value;
-      }
+    if (typeof(max_values[1]) === "undefined" || value < max_values[1]) {
+      max_values[1] = value;
+    }
     // 2 for average
     max_values[2] += value;
-    return cont ++;
+    return cont++;
   });
-  max_values[2] = max_values[2]/cont;
+  max_values[0] = (max_values[0] * 100).toFixed(2);
+  max_values[1] = (max_values[1] * 100).toFixed(2) ;
+  max_values[2] = (max_values[2] * 100 / cont).toFixed(2);
   return max_values;
 }
 
 
-function draw_bar(datas, selector){
-    data = {
-        labels : ["1 year", "3 years", "5 years", "10 years", "20 years", "30 years"],
-        datasets : [
-            {
-                fillColor : "rgba(220,220,220,0.5)",
-                strokeColor : "rgba(220,220,220,1)",
-                pointColor : "rgba(220,220,220,1)",
-                pointStrokeColor : "#fff",
-                data : datas
-            }
+function draw_bar(datas, selector) {
+  data = {
+    labels: ["1 year", "3 years", "5 years", "10 years", "20 years", "30 years"],
+    datasets: [
+      {
+        fillColor: "rgba(220,220,220,0.5)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        data: datas
+      }
+    ],
+    scaleOverride : true,
+    //** Required if scaleOverride is true **
+    //Number - The number of steps in a hard coded scale
+    scaleSteps : 10,
+    //Number - The value jump in the hard coded scale
+    scaleStepWidth : null,
+    //Number - The scale starting value
+    scaleStartValue : -20,
 
-        ]
-    }
-    new Chart($(selector).get(0).getContext("2d")).Bar(data);
+    //String - Colour of the scale line
+    scaleLineColor : "rgba(0,0,0,.3)",
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(0,0,5,.5)"
+  };
+  new Chart($(selector).get(0).getContext("2d")).Bar(data);
 }
 
 

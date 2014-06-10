@@ -33,7 +33,6 @@ gem 'bootstrap-sass', '~> 3.1.1.1'
 # Format HAML
 gem 'haml-rails', '~> 0.5.3'
 # gem 'bcrypt', '~> 3.1.7'
-gem 'chart-js-rails'
 
 gem "rails_12factor"
 

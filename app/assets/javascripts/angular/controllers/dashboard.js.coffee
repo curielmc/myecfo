@@ -38,31 +38,33 @@
     matrix_20 = calculate_best_values(years_20)
     matrix_30 = calculate_best_values(years_30)
 
-    $(".worst table tr td.year_1").html(matrix_1[1] * 100)
-    $(".worst table tr td.year_3").html(matrix_3[1] * 100)
-    $(".worst table tr td.year_5").html(matrix_5[1] * 100)
-    $(".worst table tr td.year_10").html(matrix_10[1] * 100)
-    $(".worst table tr td.year_20").html(matrix_20[1] * 100)
-    $(".worst table tr td.year_30").html(matrix_30[1] * 100)
+    $(".worst table tr td.year_1").html(matrix_1[1])
+    $(".worst table tr td.year_3").html(matrix_3[1])
+    $(".worst table tr td.year_5").html(matrix_5[1])
+    $(".worst table tr td.year_10").html(matrix_10[1])
+    $(".worst table tr td.year_20").html(matrix_20[1])
+    $(".worst table tr td.year_30").html(matrix_30[1])
 
-    $(".best table tr td.year_1").html(matrix_1[2] * 100)
-    $(".best table tr td.year_3").html(matrix_3[2] * 100)
-    $(".best table tr td.year_5").html(matrix_5[2] * 100)
-    $(".best table tr td.year_10").html(matrix_10[2] * 100)
-    $(".best table tr td.year_20").html(matrix_20[2] * 100)
-    $(".best table tr td.year_30").html(matrix_30[2] * 100)
+    $(".best table tr td.year_1").html(matrix_1[2])
+    $(".best table tr td.year_3").html(matrix_3[2])
+    $(".best table tr td.year_5").html(matrix_5[2])
+    $(".best table tr td.year_10").html(matrix_10[2])
+    $(".best table tr td.year_20").html(matrix_20[2])
+    $(".best table tr td.year_30").html(matrix_30[2])
 
-    $(".best table tr td.year1").html(matrix_1[0] * 100)
-    $(".best table tr td.year3").html(matrix_3[0] * 100)
-    $(".best table tr td.year5").html(matrix_5[0] * 100)
-    $(".best table tr td.year10").html(matrix_10[0] * 100)
-    $(".best table tr td.year20").html(matrix_20[0] * 100)
-    $(".best table tr td.year30").html(matrix_30[0] * 100)
+    $(".best table tr td.year1").html(matrix_1[0])
+    $(".best table tr td.year3").html(matrix_3[0])
+    $(".best table tr td.year5").html(matrix_5[0])
+    $(".best table tr td.year10").html(matrix_10[0])
+    $(".best table tr td.year20").html(matrix_20[0])
+    $(".best table tr td.year30").html(matrix_30[0])
 
-    draw_bar([1,2,3,4,5,6], "#canvas")
-    draw_bar([1,2,3,4,5,6], "#canvas2")
-    draw_bar([1,2,3,4,5,6], "#canvas3")
-    return pieChart
+    draw_bar([matrix_1[0], matrix_3[0], matrix_5[0], matrix_10[0], matrix_20[0], matrix_30[0]], "#canvas3")
+    draw_bar([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], "#canvas2")
+    draw_bar([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], "#canvas")
+
+
+    return pieChart;
 
   $scope.showMoney = (value1, value2) ->
     if !value1 || !value2
