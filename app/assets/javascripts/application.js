@@ -67,3 +67,23 @@ function calculate_best_values(hvalues){
   max_values[2] = max_values[2]/cont;
   return max_values;
 }
+
+
+function draw_bar(datas, selector){
+    data = {
+        labels : ["1 year", "3 years", "5 years", "10 years", "20 years", "30 years"],
+        datasets : [
+            {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                data : datas
+            }
+
+        ]
+    }
+    new Chart($(selector).get(0).getContext("2d")).Bar(data);
+}
+
+

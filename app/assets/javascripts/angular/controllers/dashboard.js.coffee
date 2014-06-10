@@ -59,6 +59,9 @@
     $(".best table tr td.year20").html(matrix_20[0] * 100)
     $(".best table tr td.year30").html(matrix_30[0] * 100)
 
+    draw_bar([1,2,3,4,5,6], "#canvas")
+    draw_bar([1,2,3,4,5,6], "#canvas2")
+    draw_bar([1,2,3,4,5,6], "#canvas3")
     return pieChart
 
   $scope.showMoney = (value1, value2) ->
