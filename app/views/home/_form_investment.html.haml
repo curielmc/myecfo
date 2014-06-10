@@ -3,10 +3,10 @@
     .col-lg-4
       %span
     .col-lg-4
-      .form-group
+      .form-group.none_change
         %label Initial Investment
         .input-group
-          %input.input-text-align-right{type: 'text', class: 'form-control',name: 'investment', id: "amount", ng:{model: 'formInvestment.investment'}, required:''}
+          %input.input-text-align-right{type: 'text', class: 'form-control',name: 'investment', id: "amount", ng: {model: 'formInvestment.investment', change: 'pieChart(formInvestment)'}, required:''}
           %span.input-group-addon $
     .col-lg-4
       %span
@@ -15,7 +15,7 @@
       .form-group
         %label Stocks
         .input-group
-          %input.input-text-align-right.my-input{type: 'number', name: 'stocks', class: 'form-control', id: "stocks", ng:{model: 'formInvestment.stock'}, :'ng-change'=> 'pieChart(formInvestment);validationSumTotal(formInvestment)', required:''}
+          %input.input-text-align-right.my-input{type: 'number', name: 'stocks', class: 'form-control', id: "stocks", ng: {model: 'formInvestment.stock', change: 'pieChart(formInvestment);validationSumTotal(formInvestment)'}, required:''}
           %span.input-group-addon %
       %h4{ng:{bind:'showMoney(formInvestment.investment,formInvestment.stock)'}}
     .col-lg-4

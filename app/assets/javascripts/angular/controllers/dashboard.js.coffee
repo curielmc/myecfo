@@ -24,12 +24,40 @@
       }
     ]
     pieChart = new Chart($("#canvas4").get(0).getContext("2d")).Pie(data)
-    year_1 = calculate_by_year(1, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_3 = calculate_by_year(3, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_5 = calculate_by_year(5, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_10 = calculate_by_year(10, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_20 = calculate_by_year(20, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_30 = calculate_by_year(30, 100, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    year_1 = calculate_by_year(1, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_3 = calculate_by_year(3, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_5 = calculate_by_year(5, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_10 = calculate_by_year(10, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_20 = calculate_by_year(20, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_30 = calculate_by_year(30, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+
+    matrix_1 = calculate_best_values(year_1)
+    matrix_3 = calculate_best_values(years_3)
+    matrix_5 = calculate_best_values(years_5)
+    matrix_10 = calculate_best_values(years_10)
+    matrix_20 = calculate_best_values(years_20)
+    matrix_30 = calculate_best_values(years_30)
+
+    $(".worst table tr td.year_1").html(matrix_1[1] * 100)
+    $(".worst table tr td.year_3").html(matrix_3[1] * 100)
+    $(".worst table tr td.year_5").html(matrix_5[1] * 100)
+    $(".worst table tr td.year_10").html(matrix_10[1] * 100)
+    $(".worst table tr td.year_20").html(matrix_20[1] * 100)
+    $(".worst table tr td.year_30").html(matrix_30[1] * 100)
+
+    $(".best table tr td.year_1").html(matrix_1[2] * 100)
+    $(".best table tr td.year_3").html(matrix_3[2] * 100)
+    $(".best table tr td.year_5").html(matrix_5[2] * 100)
+    $(".best table tr td.year_10").html(matrix_10[2] * 100)
+    $(".best table tr td.year_20").html(matrix_20[2] * 100)
+    $(".best table tr td.year_30").html(matrix_30[2] * 100)
+
+    $(".best table tr td.year1").html(matrix_1[0] * 100)
+    $(".best table tr td.year3").html(matrix_3[0] * 100)
+    $(".best table tr td.year5").html(matrix_5[0] * 100)
+    $(".best table tr td.year10").html(matrix_10[0] * 100)
+    $(".best table tr td.year20").html(matrix_20[0] * 100)
+    $(".best table tr td.year30").html(matrix_30[0] * 100)
 
     return pieChart
 
@@ -43,14 +71,11 @@
     parseFloat(value) * parseFloat(percentage) / 100
 
   $scope.validationSumTotal = (formInvestment) ->
-#    console.log(formInvestment.stock );
     sumTotal = formInvestment.stock + formInvestment.bonds + formInvestment.cash
-#    console.log sumTotal
     if sumTotal == 100
-      $(".form-group").removeClass("has-error has-feedback")
-      $(".form-group").addClass("has-success has-feedback")
+      $(".form-group:not(.none_change)").removeClass("has-error has-feedback")
+      $(".form-group:not(.none_change)").addClass("has-success has-feedback")
     else
-      $(".form-group").removeClass("has-success has-feedback")
-      $(".form-group").addClass("has-error has-feedback")
-
+      $(".form-group:not(.none_change)").removeClass("has-success has-feedback")
+      $(".form-group:not(.none_change)").addClass("has-error has-feedback")
     return sumTotal
