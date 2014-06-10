@@ -21,7 +21,7 @@
 //= require allocations
 // Jquery Mask Money
 
-$("#amount").maskMoney();
+//$("#amount").maskMoney();
 
 //
 //
