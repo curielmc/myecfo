@@ -86,14 +86,10 @@ function draw_bar(datas, selector) {
   };
 
   options = {
-    scaleOverride : true,
+    scaleOverride : false,
       //** Required if scaleOverride is true **
       //Number - The number of steps in a hard coded scale
-      scaleSteps : 10,
-    //Number - The value jump in the hard coded scale
-    scaleStepWidth : 5,
-    //Number - The scale starting value
-    scaleStartValue : -20,
+
 
     //String - Colour of the scale line
     scaleLineColor : "rgba(0,0,0,.3)",
@@ -104,4 +100,10 @@ function draw_bar(datas, selector) {
   new Chart($(selector).get(0).getContext("2d")).Bar(data, options);
 }
 
-
+function calculate_total_amount_for_year(values, amount){
+  var years = [1, 3, 5, 10, 20, 30];
+  var changes = jQuery.map(values, function(value, cont){
+    return(amount * Math.pow((1 + (value / 100.0)), years[cont]));
+  });
+  return changes;
+}
