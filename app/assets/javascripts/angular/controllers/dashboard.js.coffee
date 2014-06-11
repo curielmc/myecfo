@@ -32,26 +32,26 @@
     matrix_20 = calculate_best_values(years_20)
     matrix_30 = calculate_best_values(years_30)
 
-    $(".worst table tr td.year_1").html(matrix_1[1])
-    $(".worst table tr td.year_3").html(matrix_3[1])
-    $(".worst table tr td.year_5").html(matrix_5[1])
-    $(".worst table tr td.year_10").html(matrix_10[1])
-    $(".worst table tr td.year_20").html(matrix_20[1])
-    $(".worst table tr td.year_30").html(matrix_30[1])
+    $(".worst table tr td.year_1").html(numeral(matrix_1[1]).format('0.00%'))
+    $(".worst table tr td.year_3").html(numeral(matrix_3[1]).format('0.00%'))
+    $(".worst table tr td.year_5").html(numeral(matrix_5[1]).format('0.00%'))
+    $(".worst table tr td.year_10").html(numeral(matrix_10[1]).format('0.00%'))
+    $(".worst table tr td.year_20").html(numeral(matrix_20[1]).format('0.00%'))
+    $(".worst table tr td.year_30").html(numeral(matrix_30[1]).format('0.00%'))
 
-    $(".best table tr td.year_1").html(matrix_1[2])
-    $(".best table tr td.year_3").html(matrix_3[2])
-    $(".best table tr td.year_5").html(matrix_5[2])
-    $(".best table tr td.year_10").html(matrix_10[2])
-    $(".best table tr td.year_20").html(matrix_20[2])
-    $(".best table tr td.year_30").html(matrix_30[2])
+    $(".best table tr td.year_1").html(numeral(matrix_1[2]).format('0.00%'))
+    $(".best table tr td.year_3").html(numeral(matrix_3[2]).format('0.00%'))
+    $(".best table tr td.year_5").html(numeral(matrix_5[2]).format('0.00%'))
+    $(".best table tr td.year_10").html(numeral(matrix_10[2]).format('0.00%'))
+    $(".best table tr td.year_20").html(numeral(matrix_20[2]).format('0.00%'))
+    $(".best table tr td.year_30").html(numeral(matrix_30[2]).format('0.00%'))
 
-    $(".best table tr td.year1").html(matrix_1[0])
-    $(".best table tr td.year3").html(matrix_3[0])
-    $(".best table tr td.year5").html(matrix_5[0])
-    $(".best table tr td.year10").html(matrix_10[0])
-    $(".best table tr td.year20").html(matrix_20[0])
-    $(".best table tr td.year30").html(matrix_30[0])
+    $(".best table tr td.year1").html(numeral(matrix_1[0]).format('0.00%'))
+    $(".best table tr td.year3").html(numeral(matrix_3[0]).format('0.00%'))
+    $(".best table tr td.year5").html(numeral(matrix_5[0]).format('0.00%'))
+    $(".best table tr td.year10").html(numeral(matrix_10[0]).format('0.00%'))
+    $(".best table tr td.year20").html(numeral(matrix_20[0]).format('0.00%'))
+    $(".best table tr td.year30").html(numeral(matrix_30[0]).format('0.00%'))
 
     draw_bar(calculate_total_amount_for_year([matrix_1[0], matrix_3[0], matrix_5[0], matrix_10[0], matrix_20[0], matrix_30[0]], formInvestment.investment), "#canvas3");
     draw_bar(calculate_total_amount_for_year([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], formInvestment.investment), "#canvas");
@@ -61,8 +61,8 @@
   $scope.showMoney = (value1, value2) ->
     if !value1 || !value2
       return ""
-    show_money = (value1/100) * value2
-    return "#{show_money} $"
+    result = (value1/100) * value2
+    return numeral(result).format('$0,0.00')
 
   $scope.calculate_percetage = (value, percentage) ->
     parseFloat(value) * parseFloat(percentage) / 100

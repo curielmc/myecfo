@@ -64,9 +64,9 @@ function calculate_best_values(hvalues) {
     max_values[2] += value;
     return cont++;
   });
-  max_values[0] = (max_values[0] * 100).toFixed(2);
-  max_values[1] = (max_values[1] * 100).toFixed(2) ;
-  max_values[2] = (max_values[2] * 100 / cont).toFixed(2);
+  max_values[0] = max_values[0];
+  max_values[1] = max_values[1];
+  max_values[2] = max_values[2] / cont;
   return max_values;
 }
 
@@ -103,7 +103,7 @@ function draw_bar(datas, selector) {
 function calculate_total_amount_for_year(values, amount){
   var years = [1, 3, 5, 10, 20, 30];
   var changes = jQuery.map(values, function(value, cont){
-    return(amount * Math.pow((1 + (value / 100.0)), years[cont]));
+    return(amount * Math.pow((1 + value), years[cont]));
   });
   return changes;
 }

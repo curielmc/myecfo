@@ -6,8 +6,8 @@
       .form-group.none_change
         %label Initial Investment
         .input-group
-          %input.input-text-align-right{type: 'text', class: 'form-control',name: 'investment', id: "amount", ng: {model: 'formInvestment.investment', change: 'pieChart(formInvestment)'}, required:''}
           %span.input-group-addon $
+          %input.input-text-align-right{type: 'text', class: 'form-control',name: 'investment', id: "amount", ng: {model: 'formInvestment.investment', change: 'pieChart(formInvestment)'}, required:''}
     .col-lg-4
       %span
   .row.text-center
@@ -17,19 +17,19 @@
         .input-group
           %input.input-text-align-right.my-input{type: 'number', name: 'stocks', class: 'form-control', id: "stocks", ng: {model: 'formInvestment.stock', change: 'pieChart(formInvestment);validationSumTotal(formInvestment)'}, required: false}
           %span.input-group-addon %
-      %h4{ng:{bind:'showMoney(formInvestment.investment,formInvestment.stock)'}}
+      %h4{ng: {bind: 'showMoney(formInvestment.investment,formInvestment.stock)'}}
     .col-lg-4
       .form-group
         %label Bonds
         .input-group
           %input.input-text-align-right{type: 'number', name: 'bonds',class: 'form-control', id: "bounds",ng:{model: 'formInvestment.bonds', change: 'pieChart(formInvestment);validationSumTotal(formInvestment)'}, required: false}
           %span.input-group-addon %
-      %h4{ng:{bind:'showMoney(formInvestment.investment,formInvestment.bonds)'}}
+      %h4{ng: {bind: 'showMoney(formInvestment.investment,formInvestment.bonds)'}}
     .col-lg-4
       .form-group
         %label Cash
         .input-group
           %input.input-text-align-right{type: 'number', name: 'cash', class: 'form-control', id: "cash", ng:{model: 'formInvestment.cash', change: 'pieChart(formInvestment);validationSumTotal(formInvestment)'}, required: false}
           %span.input-group-addon %
-      %h4{ng: {bind:'showMoney(formInvestment.investment,formInvestment.cash)'}}
+      %h4{ng: {bind: 'showMoney(formInvestment.investment,formInvestment.cash)'}}
 
