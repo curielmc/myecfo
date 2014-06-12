@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:mgldr/nvd3-rails.git
+  remote: git://github.com/mgldr/nvd3-rails.git
   revision: 88920f1e8354e7adac0aeb6181ac1d649c57a8ff
   submodules: true
   specs:
