@@ -72,19 +72,46 @@ function calculate_best_values(hvalues) {
 
 
 function draw_bar(datas, selector) {
+  var data_real = [{
+    value: datas[0],
+    label: "1 Year"
+  },{
+    value: datas[1],
+    label: "3 Years"
+  },{
+    value: datas[2],
+    label: "5 Years"
+  },{
+    value: datas[3],
+    label: "10 Years"
+  },{
+    value: datas[4],
+    label: "20 Years"
+  },{
+    value: datas[5],
+    label: "30 Years"
+  }];
   nv.addGraph(function() {
     var valuesTotal = [{
-      key: "veamos como esta",
-      values: datas
+      key: "",
+      values: data_real
     }]
 
     var chart = nv.models.discreteBarChart()
-        .x(function(d) { return d })    //Specify the data accessors.
-        .y(function(d) { return d })
+        .x(function(d) { return d.label })    //Specify the data accessors.
+        .y(function(d) { return d.value })
         .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
-        .tooltips(false)        //Don't show tooltips
-        .showValues(true)       //...instead, show the bar value right on top of each bar.
-        .transitionDuration(350);
+        .tooltips(true)        //Don't show tooltips
+        .showValues(false)       //...instead, show the bar value right on top of each bar.
+        .transitionDuration(350)
+
+
+    chart.xAxis     //Chart x-axis settings
+      .axisLabel('Years');
+
+    chart.yAxis     //Chart y-axis settings
+      .axisLabel('Amount')
+      .tickFormat(d3.format('$,.'));
 
     d3.select(selector + " svg")
       .datum(valuesTotal)
@@ -102,7 +129,7 @@ function draw_pie(datas){
     var chart = nv.models.pieChart()
       .x(function(d) { return d.key })
       .y(function(d) { return d.value })
-      .showLabels(true);
+      .labelType("percent");
 
     d3.select("#canvas4 svg")
       .datum(datas)
