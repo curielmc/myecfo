@@ -7,7 +7,7 @@
 //= require angular-resource
 
 // Charts library
-//= require Chart
+//= require nvd3-rails
 // Bootstrap Twitter Plugins
 //= require bootstrap
 //= require jquery.maskMoney.min
@@ -72,32 +72,46 @@ function calculate_best_values(hvalues) {
 
 
 function draw_bar(datas, selector) {
-  data = {
-    labels: ["1 year", "3 years", "5 years", "10 years", "20 years", "30 years"],
-    datasets: [
-      {
-        fillColor: "rgba(220,220,220,0.8)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        data: datas
-      }
-    ]
-  };
+  nv.addGraph(function() {
+    var valuesTotal = [{
+      key: "veamos como esta",
+      values: datas
+    }]
 
-  options = {
-    scaleOverride : false,
-      //** Required if scaleOverride is true **
-      //Number - The number of steps in a hard coded scale
+    var chart = nv.models.discreteBarChart()
+        .x(function(d) { return d })    //Specify the data accessors.
+        .y(function(d) { return d })
+        .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
+        .tooltips(false)        //Don't show tooltips
+        .showValues(true)       //...instead, show the bar value right on top of each bar.
+        .transitionDuration(350);
 
+    d3.select(selector + " svg")
+      .datum(valuesTotal)
+      .call(chart);
 
-    //String - Colour of the scale line
-    scaleLineColor : "rgba(0,0,0,.3)",
-    //String - Colour of the grid lines
-    scaleGridLineColor : "rgba(0,0,5,.05)",
-    animation : false
-  }
-  new Chart($(selector).get(0).getContext("2d")).Bar(data, options);
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+}
+
+function draw_pie(datas){
+  nv.addGraph(function() {
+    var chart = nv.models.pieChart()
+      .x(function(d) { return d.key })
+      .y(function(d) { return d.value })
+      .showLabels(true);
+
+    d3.select("#canvas4 svg")
+      .datum(datas)
+      .transition().duration(350)
+      .call(chart);
+
+    return chart;
+  });
+
 }
 
 function calculate_total_amount_for_year(values, amount){

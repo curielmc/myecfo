@@ -18,6 +18,10 @@
   text-align: right;
 }
 
-.worst table td, .best table td{
+.worst table td, .best table td, .worst table th, .best table th{
   text-align: center;
+}
+#canvas, #canvas2, #canvas3, #canvas4{
+  height: 250px;
+  width: 400px;
 }

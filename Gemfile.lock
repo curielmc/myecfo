@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:mgldr/nvd3-rails.git
+  revision: 88920f1e8354e7adac0aeb6181ac1d649c57a8ff
+  submodules: true
+  specs:
+    nvd3-rails (1.0.0)
+      railties (>= 3.2.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -203,6 +211,7 @@ DEPENDENCIES
   jasmine-rails
   jbuilder (~> 2.0)
   jquery-rails
+  nvd3-rails!
   pg
   rails (= 4.1.1)
   rails_12factor
