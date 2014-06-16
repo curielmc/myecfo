@@ -17,7 +17,7 @@
 //= require ./angular/controllers/dashboard
 
 $(document).ready(function(){
-  $("#amount").maskMoney({precision: 0});
+  //$("#amount").maskMoney({precision: 0});
 });
 
 calculate_by_year = function(year, ammount, ps, pb, pc) {
@@ -109,7 +109,8 @@ function draw_bar(datas, selector) {
       .axisLabel('Years');
 
     chart.yAxis     //Chart y-axis settings
-      .axisLabel('Amount');
+      .axisLabel('Amount')
+      .tickFormat(d3.format(',2.0s'));
 
     d3.select(selector + " svg")
       .datum(valuesTotal)

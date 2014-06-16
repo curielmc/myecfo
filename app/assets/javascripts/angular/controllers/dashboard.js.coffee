@@ -2,7 +2,7 @@
   $scope.formInvestment = {}
   $scope.initial_value_combo = 100
   $scope.pieChart = (formInvestment) ->
-
+    investment = formInvestment.investment;
     data = [{
         value: formInvestment.stock
         key: "Stock"
@@ -15,12 +15,12 @@
       }
     ]
     draw_pie(data)
-    year_1 = calculate_by_year(1, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_3 = calculate_by_year(3, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_5 = calculate_by_year(5, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_10 = calculate_by_year(10, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_20 = calculate_by_year(20, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
-    years_30 = calculate_by_year(30, formInvestment.investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    year_1 = calculate_by_year(1, investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_3 = calculate_by_year(3, investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_5 = calculate_by_year(5, investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_10 = calculate_by_year(10, investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_20 = calculate_by_year(20, investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
+    years_30 = calculate_by_year(30, investment, formInvestment.stock, formInvestment.bonds, formInvestment.cash)
 
     matrix_1 = calculate_best_values(year_1)
     matrix_3 = calculate_best_values(years_3)
@@ -56,14 +56,11 @@
 
     return true
 
-  $scope.showMoney = (value1, value2) ->
-    if !value1 || !value2
+  $scope.showMoney = (investment, allocation) ->
+    if !investment || !allocation
       return ""
-    result = (value1/100) * value2
+    result = (numeral().unformat(investment) / 100) * allocation
     return numeral(result).format('$0,0')
-
-  $scope.calculate_percetage = (value, percentage) ->
-    parseFloat(value) * parseFloat(percentage) / 100
 
   $scope.validationSumTotal = (formInvestment) ->
     sumTotal = formInvestment.stock + formInvestment.bonds + formInvestment.cash
