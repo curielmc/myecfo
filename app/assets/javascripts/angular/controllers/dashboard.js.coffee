@@ -53,13 +53,14 @@
     draw_bar(calculate_total_amount_for_year([matrix_1[0], matrix_3[0], matrix_5[0], matrix_10[0], matrix_20[0], matrix_30[0]], formInvestment.investment), "#canvas3");
     draw_bar(calculate_total_amount_for_year([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], formInvestment.investment), "#canvas");
     draw_bar(calculate_total_amount_for_year([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], formInvestment.investment), "#canvas2");
+
     return true
 
   $scope.showMoney = (value1, value2) ->
     if !value1 || !value2
       return ""
     result = (value1/100) * value2
-    return numeral(result).format('$0,0.00')
+    return numeral(result).format('$0,0')
 
   $scope.calculate_percetage = (value, percentage) ->
     parseFloat(value) * parseFloat(percentage) / 100

@@ -1,4 +1,3 @@
-//
 //= require jquery
 //= require jquery_ujs
 
@@ -17,14 +16,10 @@
 // Angular MVC
 //= require ./angular/controllers/dashboard
 
-// Charts
-//= require allocations
-// Jquery Mask Money
+$(document).ready(function(){
+  $("#amount").maskMoney({precision: 0});
+});
 
-//$("#amount").maskMoney();
-
-//
-//
 calculate_by_year = function(year, ammount, ps, pb, pc) {
   var ammount_aux, aux1, aux_by_year, cont;
   cont = 1;
@@ -93,7 +88,7 @@ function draw_bar(datas, selector) {
   }];
   nv.addGraph(function() {
     var valuesTotal = [{
-      key: "",
+      key: "bar_data",
       values: data_real
     }]
 
@@ -101,17 +96,20 @@ function draw_bar(datas, selector) {
       .x(function(d) { return d.label })    //Specify the data accessors.
       .y(function(d) { return d.value })
       .staggerLabels(true)    //Too many bars and not enough room? Try staggering labels.
-      .tooltips(true)        //Don't show tooltips
-      .showValues(false)       //...instead, show the bar value right on top of each bar.
+      .showValues(true)       //...instead, show the bar value right on top of each bar.
       .transitionDuration(350)
-
+      .showYAxis(false)
+      .valueFormat(function(x){ return numeral(x).format('($0.00 a)')})
+      .tooltipContent(function (key, y, e, graph) {
+        return '<h4>' + y + '</h4>' +
+          '<p>' + numeral(e).format('($0.0 a)') + '</p>';
+      });
 
     chart.xAxis     //Chart x-axis settings
       .axisLabel('Years');
 
     chart.yAxis     //Chart y-axis settings
-      .axisLabel('Amount')
-      .tickFormat(d3.format(',.1s'));
+      .axisLabel('Amount');
 
     d3.select(selector + " svg")
       .datum(valuesTotal)
@@ -123,6 +121,7 @@ function draw_bar(datas, selector) {
   });
 
 }
+
 
 function draw_pie(datas){
   nv.addGraph(function() {
