@@ -38,6 +38,9 @@ gem 'haml-rails', '~> 0.5.3'
 
 gem "rails_12factor"
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem "devise"
+
 group :test, :development do
   gem "byebug"
   gem 'rspec-rails', '~> 3.0.0'
