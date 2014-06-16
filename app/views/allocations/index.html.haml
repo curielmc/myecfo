@@ -3,14 +3,10 @@
   %hr
   = render 'home/form_investment'
   %hr
-  %ul.nav.nav-tabs#myTab
-    %li.active= link_to "Prediction", "#results", data: {toggle: "tab"}
-    %li= link_to "Combo", "#combo", data: {toggle: "tab"}
   .tab-content
     .tab-pane.active#results
       = render 'home/body'
-    .tab-pane#combo
-      = render 'home/combo'
+
 
   = render 'allocations/modal'
   .text-center
