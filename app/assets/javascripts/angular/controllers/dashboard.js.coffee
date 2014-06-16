@@ -2,7 +2,7 @@
   $scope.formInvestment = {}
   $scope.initial_value_combo = 100
   $scope.pieChart = (formInvestment) ->
-    investment = formInvestment.investment;
+    investment = numeral().unformat(formInvestment.investment);
     data = [{
         value: formInvestment.stock
         key: "Stock"
@@ -50,9 +50,9 @@
     $(".best table tr td.year20").html(numeral(matrix_20[0]).format('0.00%'))
     $(".best table tr td.year30").html(numeral(matrix_30[0]).format('0.00%'))
 
-    draw_bar(calculate_total_amount_for_year([matrix_1[0], matrix_3[0], matrix_5[0], matrix_10[0], matrix_20[0], matrix_30[0]], formInvestment.investment), "#canvas3");
-    draw_bar(calculate_total_amount_for_year([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], formInvestment.investment), "#canvas");
-    draw_bar(calculate_total_amount_for_year([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], formInvestment.investment), "#canvas2");
+    draw_bar(calculate_total_amount_for_year([matrix_1[0], matrix_3[0], matrix_5[0], matrix_10[0], matrix_20[0], matrix_30[0]], investment), "#canvas3");
+    draw_bar(calculate_total_amount_for_year([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], investment), "#canvas");
+    draw_bar(calculate_total_amount_for_year([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], investment), "#canvas2");
 
     return true
 

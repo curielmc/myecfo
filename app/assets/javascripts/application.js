@@ -17,7 +17,7 @@
 //= require ./angular/controllers/dashboard
 
 $(document).ready(function(){
-  //$("#amount").maskMoney({precision: 0});
+  $("#amount").maskMoney({precision: 0});
 });
 
 calculate_by_year = function(year, ammount, ps, pb, pc) {
