@@ -11,10 +11,40 @@
 //= require bootstrap
 //= require jquery.maskMoney.min
 //= require numeral.min
+//= require hash_args
 // Config Angular
 //= require main
 // Angular MVC
 //= require ./angular/controllers/dashboard
+
+
+function on_hashchange() {
+  var amount = HashArgs.get("amount");
+  var stocks = HashArgs.get("stocks");
+  var bonds = HashArgs.get("bonds");
+  var cash = HashArgs.get("cash");
+  if(amount > 0){
+    $("#amount").val(amount);
+    $("#amount").triggerHandler("change");
+  }
+  if(stocks > 0){
+    $("#stocks").val(stocks);
+    $("#stocks").triggerHandler("change");
+  }
+  if(bonds > 0){
+    $("#bounds").val(bonds);
+    $("#bounds").triggerHandler("change");
+  }
+  if(cash > 0){
+    $("#cash").val(cash);
+    $("#cash").triggerHandler("change");
+  }
+  return false;
+}
+
+$(window).on('hashchange', on_hashchange);
+
+$(on_hashchange);  // Also, call this on page load
 
 $(document).ready(function(){
   $("#amount").maskMoney({precision: 0});

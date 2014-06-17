@@ -54,6 +54,10 @@
     draw_bar(calculate_total_amount_for_year([matrix_1[1], matrix_3[1], matrix_5[1], matrix_10[1], matrix_20[1], matrix_30[1]], investment), "#canvas");
     draw_bar(calculate_total_amount_for_year([matrix_1[2], matrix_3[2], matrix_5[2], matrix_10[2], matrix_20[2], matrix_30[2]], investment), "#canvas2");
 
+    HashArgs.set("amount", investment);
+    HashArgs.set("stocks", formInvestment.stock);
+    HashArgs.set("bonds", formInvestment.bonds);
+    HashArgs.set("cash", formInvestment.cash);
     return true
 
   $scope.showMoney = (investment, allocation) ->
