@@ -22,7 +22,7 @@
       .form-group
         %label Bonds
         .input-group
-          %input.input-text-align-right{placeholder: "Enter Your Bonds Allocation", type: 'number', name: 'bonds',class: 'form-control', id: "bounds",ng:{model: 'formInvestment.bonds', change: 'pieChart(formInvestment);validationSumTotal(formInvestment)'}, required: false}
+          %input.input-text-align-right{placeholder: "Enter Your Bond Allocation", type: 'number', name: 'bonds',class: 'form-control', id: "bounds",ng:{model: 'formInvestment.bonds', change: 'pieChart(formInvestment);validationSumTotal(formInvestment)'}, required: false}
           %span.input-group-addon %
       %h4{ng: {bind: 'showMoney(formInvestment.investment, formInvestment.bonds)'}}
     .col-lg-4
