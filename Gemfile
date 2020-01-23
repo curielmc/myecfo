@@ -31,7 +31,7 @@ gem "nvd3-rails", github: "mgldr/nvd3-rails", submodules: true
 gem 'angularjs-rails', '~> 1.2.16'
 # Use ActiveModel has_secure_password
 # Bootstrap Twitter for Sass
-gem 'bootstrap-sass', '~> 3.1.1.1'
+gem 'bootstrap-sass', '~> 3.4.1'
 # Format HAML
 gem 'haml-rails', '~> 0.5.3'
 # gem 'bcrypt', '~> 3.1.7'
