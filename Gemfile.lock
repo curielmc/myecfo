@@ -93,7 +93,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    ffi (1.9.3)
+    ffi (1.12.1)
     formatador (0.2.5)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
